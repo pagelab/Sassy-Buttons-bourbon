@@ -1,4 +1,4 @@
-Compass CSS Sassy Buttons
+Bourbon CSS Sassy Buttons
 =========================
 
 Super sassy and super easy CSS3 buttons.

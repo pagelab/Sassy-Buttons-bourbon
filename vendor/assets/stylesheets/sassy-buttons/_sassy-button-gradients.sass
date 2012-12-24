@@ -2,18 +2,12 @@
 @import "sassy-button-text"
 @import "sassy-button-shadows"
 
-@mixin sassy-button-gradient($style: $sb-gradient-style, $base-color: $sb-base-color, $second-color: $sb-second-color, $text-color: $sb-text-color, $text-style: $sb-text-style,  $auto-states: $sb-pseudo-states, $ie: $sb-ie-support)
+@mixin sassy-button-gradient($style: $sb-gradient-style, $base-color: $sb-base-color, $second-color: $sb-second-color, $text-color: $sb-text-color, $text-style: $sb-text-style,  $auto-states: $sb-pseudo-states)
   $first-color: $base-color
   $lightness : lightness($base-color)
   $brightnessDivsor : 1
   @if $lightness > 75
     $brightnessDivsor : 2
-
-  // user a simple filter gradient if $sb-ie-support is true
-  @if $ie
-    @include filter-gradient($first-color, darken($first-color, 20%))
-  @else
-    background-color: $base-color
 
   // Matte Gradient Style
   @if $style == "matte"
@@ -23,7 +17,7 @@
       $first-color: lighten($base-color,15%)
       $second-color: $base-color
 
-    @include background(linear-gradient(color-stops($first-color, $second-color 70%)))
+    @include linear-gradient($first-color, $second-color 70%, $fallback: $base-color)
     @include sassy-button-highlight-shadow($first-color)
     border: 1px solid darken($second-color, 5%)
 
@@ -37,7 +31,7 @@
     @if $second-color == false
       $second-color: darken($base-color, 10%)
 
-    @include background(linear-gradient(color-stops($first-color, $base-color 50%, $second-color)))
+    @include linear-gradient($first-color, $base-color 50%, $second-color, $fallback: $base-color)
     @include sassy-button-highlight-shadow($first-color)
     border: 1px solid darken($second-color, 5%)
 
@@ -51,7 +45,7 @@
     @if $second-color == false
       $second-color: $base-color
 
-    @include background(linear-gradient(color-stops($first-color 50%, $base-color 51%)))
+    @include linear-gradient($first-color 50%, $base-color 51%, $fallback: $base-color)
     @include sassy-button-highlight-shadow($first-color)
     border: 1px solid darken($second-color, 5%)
 
@@ -63,7 +57,7 @@
     @if $second-color == false
       $second-color: darken($base-color, 10%)
 
-    @include background(linear-gradient(color-stops($base-color, $second-color)))
+    @include linear-gradient($base-color, $second-color, $fallback: $base-color)
     @include sassy-button-highlight-shadow($first-color)
     border: 1px solid darken($second-color, 5%)
 

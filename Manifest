@@ -4,7 +4,7 @@ Manifest
 README.mkdn
 VERSION
 lib/sassy-buttons.rb
-sassy-buttons.gemspec
+sassy-buttons-bourbon.gemspec
 stylesheets/_sassy-buttons.sass
 stylesheets/sassy-buttons/_sassy-button-gradients.sass
 stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass
