@@ -11,7 +11,8 @@
   @else
     $text-color-shift: 25  + ($diff/10)
 
-  color: $text-color
+  &, &:hover, &:focus
+    color: $text-color
 
   @if $text-style == "inset"
     @if $text-lightness < 50
