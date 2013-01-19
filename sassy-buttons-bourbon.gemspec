@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.date = "2012-08-24"
   s.description = "Sassy CSS3 buttons using Bourbon./"
   s.email = "matija.marohnic@gmail.com"
-  s.files = ["Gemfile", "LICENSE", "Manifest", "README.mkdn", "VERSION", "lib/sassy-buttons.rb", "sassy-buttons-bourbon.gemspec", "stylesheets/_sassy-buttons.sass", "stylesheets/sassy-buttons/_sassy-button-gradients.sass", "stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass", "stylesheets/sassy-buttons/_sassy-button-shadows.sass", "stylesheets/sassy-buttons/_sassy-button-styles.sass", "stylesheets/sassy-buttons/_sassy-button-text.sass", "templates/project/_sassybuttons.sass", "templates/project/manifest.rb", "Rakefile"]
+  s.files = Dir["README.mkdn", "LICENSE", "VERSION", "lib/**/*", "vendor/**/*"]
   s.require_paths = ["lib"]
   s.summary = "CSS only buttons extension for Bourbon."
 
